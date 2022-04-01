@@ -30,11 +30,10 @@ jobs:
 
   FailJob:
     runs-on: ubuntu-latest
-      steps:
-      - uses: actions/download-artifact@v3.0.0
-        with:
-          name: Linux_Binary
-          path: ./${{ env.binary_name }}
-      - name: execute failed 
-        run: ./${{ env.binary_name }}
-
+    steps:
+    - uses: actions/download-artifact@v3.0.0
+      with:
+        name: Linux_Binary
+        path: ./${{ env.binary_name }}
+    - name: execute failed 
+      run: ./${{ env.binary_name }}
